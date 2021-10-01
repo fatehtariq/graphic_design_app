@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <top-bar></top-bar>
+    <b-container fluid class="pt-2">
+      <b-row>
+        <b-col cols="3">
+          <b-row>
+            <side-tab></side-tab>
+          </b-row>
+          <b-row class="pt-2">
+            <canvas-controls></canvas-controls>
+          </b-row>
+        </b-col>
+        <b-col cols="9">
+          <b-row>
+            <the-canvas></the-canvas> </b-row
+        ></b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import TopBar from "@/components/TopBar.vue";
+import SideTab from "@/components/SideTab.vue";
+import TheCanvas from "@/components/TheCanvas.vue";
+import CanvasControls from '@/components/controls/CanvasControls.vue';
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TopBar,
+    SideTab,
+    TheCanvas,
+    CanvasControls
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 </style>
